@@ -1,10 +1,8 @@
 import React from "react";
 import * as d3 from "d3";
-class Chart extends React.Component {
-
-    render() {
-        const { data } = this.props
-
+function Chart (data1) {
+    const data=data1.data
+console.log(data)
         const width = 1000
         const height = 300
         const color = d3.scaleOrdinal(d3.schemeCategory10)
@@ -67,11 +65,11 @@ class Chart extends React.Component {
 
         </svg>
         )
-    }
+    
 }
 
-class App extends React.Component {
-    render() {
+function App(){
+    
         const data = {
             labels: ['A', 'B', 'C', 'D'],
             series: [
@@ -91,6 +89,6 @@ class App extends React.Component {
           }
 
         return <Chart data={data} />
-    }
+    
 }
 export default App;
